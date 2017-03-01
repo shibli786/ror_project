@@ -1,7 +1,8 @@
 Tutorial::Application.routes.draw do
 
 
-  match ':controller(/:action(/:id))',:via=>:get
+
+  match ':controller(/:action(/:id))',:via=>[:get,:post]
 
 
 
