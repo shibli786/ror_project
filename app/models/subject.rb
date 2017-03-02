@@ -5,4 +5,6 @@ class Subject < ActiveRecord::Base
 #pages table hold foreign key marking toward section table
 has_many :pages
 
+
+
 end

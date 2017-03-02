@@ -9,5 +9,68 @@ Index Page
 
 
 
+<%text=" Naqshbandia: founded by Khwaja Wahauddin Naqshband of Turkey, came to India through Khwaja Baqi
+Billah (d: 1603) and Sheikh Ahmed Farooq ‘Sirhindi’ (d:1624), and has been popular in Punjab and Kashmir.
+They conducted their devotions in silence. However, their stature was not that of Kamils.\n\n
+Suhrawardias live in extreme poverty, spending time in Zikr- remembrance. Chishtias are known to be fond
+of ‘Chilla’ (solitary stay for 40 days) and Sama- dances with jingling anklets, reciting the Kalma loudly.
+Qawwali, invented by Amir Khusrau, is a representation of the inner sound. Qaadirias do Zikr in both loud
+and low voice. Naqshbandias recite the Kalma in a low voice, follow Shari’a and Habs-e-Dam- Prana Yoga. " %>
+<h2>Word Wrap</h2>
+
+<%=word_wrap(text,:line_width=>30)%>
 <hr>
+<h2>Simple Format</h2>
+<%=simple_format(text)%>
+
+<hr/>
+
+<h2>simple_format + word_wrap</h2>
+<%= simple_format(word_wrap(text,:line_width=>30))%>
+
+<hr/>
+
+<h2>Truncate</h2>
+
+<%= truncate(text,:length =>40,:omission=>"...")%>
+<hr/>
+<h2>excerpt</h2>
+<%= excerpt(text,'Suhrawardias',:radius=>10,:omission=>"...")%>
+
+<hr/>
+
+<h2>highlight</h2>
+	
+	<%= highlight(text,['Turkey','known'])%>
+
+
+<hr/>
+
+
+<h2>highlight</h2>
+	
+	<%= highlight(text,['Turkey','known'],:highlighter =>'<em>\1</em>')%>
+
+
+<hr/>
+
+
+<h2>Pluralize</h2>
+<%="product".pluralize%>
+</br>
+
+
+<%= pluralize(2,'apple')%>
+
+<hr>
+
+
+<h2>Cycle</h2>
+
+
+<% 5.times do%>
+<%= cycle('red','yellow')%>
+<br/>
+<%end%>
+
 <%= params.inspect %>

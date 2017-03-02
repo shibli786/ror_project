@@ -1,39 +1,51 @@
 <% link_to("back to list",{:action=>'index'},:class=> 'back-lin')%>
-<div class="subjects new">
-	<h2>update Subject</h2>
+<div class="Update Subject">
+	<h2>Create Subject</h2>
 	
 <%= form_for(:subject, :url => {
-	:action =>'update1',:id=> @subject.id
-	})  do |t| %>
+	:action =>'update',:id=>@subject.id
+	},:html => {:class => 'form'})  do |t| %>
 	<table>
 		<tr>
-			<th>Name</th>
-			<td><%=t.text_field(:name) %></td>
+			<div class="form-group">
+			<th><label class="input-label">Name</label></th>
+			<td><%=t.text_field(:name,:class=>'form-control form-input' ) %></td>
+			</div>
 		</tr>
 		<tr>
 			<th>
+			<div class="form-group">
+				<label class="input-label">
 				Position
+</label>
 
 			</th>
-			<td><%= t.text_field(:position)%></td>
+			<td><%= t.text_field(:position ,:class=>'form-control form-input')%></td>
+		</div>
+
 		</tr>
 		<tr>
+
+		<div class="form-group">
 		<th>
-			Visible
+			<label class="input-label">Visible</label>
 		</th>
 			<td>
-				<%= t.text_field(:visible)%>
 
+				<%= t.text_field(:visible,:class=>'form-control form-input')%>
+
+			
 			</td>
+
+</div>
 
 		</tr>	
 
 	</table>
-	<div class="form-button">
-	<%= submit_tag("Update Subject")%>
+	
+	<%= submit_tag("Update ",:class=>'submit-btn')%>
 		
-	</div>
-	<%end%>
+		<%end%>
 
 
 </div>

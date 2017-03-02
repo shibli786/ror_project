@@ -1,2 +1,6 @@
-<h1>Subjects#delete</h1>
-<p>Find me in app/views/subjects/delete.html.erb</p>
+<% link_to("back to list",{:action=>'index'},:class=> 'back-lin')%>
+Are you sure you wana Delete thi Subject?
+
+<%= @subject.name%>
+<%= link_to("Delete Subject",{:action=>'destroy',:id=>@subject.id})%>
+

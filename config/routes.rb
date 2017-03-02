@@ -1,9 +1,16 @@
 Tutorial::Application.routes.draw do
+  
+  get "pages/create"
+  get "pages/update"
+  get "pages/new"
+  get "pages/delete"
+  get "pages/index"
+  get "pages/destroy"
+  #resources :subjects
 
-
-
+  # match '/subjects', to:  "subjects#index", :via=>[:get,:post]
   match ':controller(/:action(/:id))',:via=>[:get,:post]
-
+  
 
 
 
