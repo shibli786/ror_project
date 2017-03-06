@@ -7,7 +7,7 @@ class CreateSections < ActiveRecord::Migration
 		t.boolean :visible 
 		t.string :content_type
 		t.text :content
-		t.timestamp
+		t.timestamps
 
 	end 
 

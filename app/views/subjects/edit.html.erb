@@ -1,47 +1,12 @@
 <% link_to("back to list",{:action=>'index'},:class=> 'back-lin')%>
 <div class="Update Subject">
-	<h2>Create Subject</h2>
+	<h2>Update Subject</h2>
 	
 <%= form_for(:subject, :url => {
-	:action =>'update',:id=>@subject.id
-	},:html => {:class => 'form'})  do |t| %>
-	<table>
-		<tr>
-			<div class="form-group">
-			<th><label class="input-label">Name</label></th>
-			<td><%=t.text_field(:name,:class=>'form-control form-input' ) %></td>
-			</div>
-		</tr>
-		<tr>
-			<th>
-			<div class="form-group">
-				<label class="input-label">
-				Position
-</label>
+	:action =>'update',:id=>@subject.id},:html => {:class => 'form'})  do |t| %>
+	
+	<%= render(:partial=>'forms',:locals=>{:t=>t}) %>
 
-			</th>
-			<td><%= t.text_field(:position ,:class=>'form-control form-input')%></td>
-		</div>
-
-		</tr>
-		<tr>
-
-		<div class="form-group">
-		<th>
-			<label class="input-label">Visible</label>
-		</th>
-			<td>
-
-				<%= t.text_field(:visible,:class=>'form-control form-input')%>
-
-			
-			</td>
-
-</div>
-
-		</tr>	
-
-	</table>
 	
 	<%= submit_tag("Update ",:class=>'submit-btn')%>
 		

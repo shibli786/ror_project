@@ -2,6 +2,14 @@ class SubjectsController < ApplicationController
 
 
 
+  def edit
+		
+  	@subject= Subject.find(params[:id])
+ 	@subjects_count=Subject.count
+
+  end
+
+
 
 
   def index
@@ -13,11 +21,16 @@ class SubjectsController < ApplicationController
 
   def new
   	@subject =Subject.new
+  	@subjects_count=Subject.count
   end
+
+
 
   def show
    @subject= Subject.find(params[:id])
   end
+
+
 
   def update
   	# abort("called")
@@ -31,9 +44,12 @@ class SubjectsController < ApplicationController
   	end
   end
 
+
   def delete
   	@subject =Subject.find(params[:id])
   end
+
+
 
   def destroy
   	@subject =Subject.find(params[:id])
@@ -46,17 +62,9 @@ class SubjectsController < ApplicationController
   	else
   		flash[:danger]="unable to Delete '#{sub.name}' "
   		render("index")
-
-
-
-  end
-
-  def edit
-
-  	@subject= Subject.find(params[:id])
+    end
 
   end
-
 
 
   def create
@@ -70,16 +78,14 @@ class SubjectsController < ApplicationController
   		render ("new")
   	end
   	
-  	end
-end
+  end
+
 	
-		private
+    private
 
 	def subject_params
-		params.require(:subject).permit(:name,:position,:visible)
+		params.require(:subject).permit(:created_at,:name,:position,:visible)
 	end
-
-
 
 
 end

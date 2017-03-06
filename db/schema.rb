@@ -50,21 +50,25 @@ ActiveRecord::Schema.define(version: 20170228074939) do
   end
 
   create_table "sections", force: true do |t|
-    t.integer "page_id"
-    t.string  "name",         limit: 50
-    t.string  "position"
-    t.boolean "visible"
-    t.string  "content_type"
-    t.text    "content"
+    t.integer  "page_id"
+    t.string   "name",         limit: 50
+    t.string   "position"
+    t.boolean  "visible"
+    t.string   "content_type"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "sections", ["name"], name: "index_sections_on_name", using: :btree
   add_index "sections", ["page_id"], name: "index_sections_on_page_id", using: :btree
 
   create_table "subjects", force: true do |t|
-    t.string  "name",     limit: 50
-    t.integer "position"
-    t.boolean "visible",             default: false
+    t.string   "name",       limit: 50
+    t.integer  "position"
+    t.boolean  "visible",               default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

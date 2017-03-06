@@ -1,0 +1,60 @@
+
+	<table>
+		<tr>
+			<div class="form-group">
+			<th><label class="input-label">Name</label>
+			</th>
+			<td>
+			<%=t.text_field(:name,:class=>'form-control form-input' ) %>
+				
+			</td>
+			</div>
+		</tr>
+		<tr>
+		<div class="form-group">
+
+			<th>
+				<label class="input-label">
+				Position
+				
+				</label>
+
+			</th>
+			<td class="abc"><%= t.select(:position,1..@subjects_count)%></td>
+		</div>
+
+		</tr>
+
+
+		<tr>
+		<div class="form-group">
+
+			<th>
+				<label class="input-label">
+				Created_at
+				
+				</label>
+
+			</th>
+			<td class="abc"><%= t.datetime_select(:created_at) %></td>
+		</div>
+
+		</tr>
+		<tr>
+
+		<div class="form-group">
+		<th>
+			<label class="input-label">Visible</label>
+		</th>
+			<td class="abc">
+
+				<%= t.check_box(:visible)%>
+
+			
+			</td>
+
+		</div>
+
+		</tr>	
+
+	</table>
