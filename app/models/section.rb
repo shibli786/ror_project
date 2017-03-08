@@ -15,8 +15,9 @@ has_many :section_edits
 
 # joining sections table and users table by default
 #rails will search for pivot tabel name as users_section
-#but here we are using intermidiate model SectionEdit which hold and user_id and section_id
-#hence by specifying through key rails will join sections table and users table 
+#but here we are using intermidiate model SectionEdit which hold
+# and user_id and section_id
+#hence by specifying 'through' key rails will join sections table and users table 
 # by SectionEdit model
 
 ##NOTE

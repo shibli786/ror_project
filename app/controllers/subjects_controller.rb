@@ -3,9 +3,9 @@ class SubjectsController < ApplicationController
 
 
   def edit
-		
   	@subject= Subject.find(params[:id])
  	@subjects_count=Subject.count
+
 
   end
 
@@ -33,7 +33,7 @@ class SubjectsController < ApplicationController
 
 
   def update
-  	# abort("called")
+  	@subjects_count=Subject.count
   	@subject = Subject.find(params[:id])
   	 if @subject.update_attributes(subject_params)
   	 	flash[:success] = 'updated successfully'
@@ -68,6 +68,8 @@ class SubjectsController < ApplicationController
 
 
   def create
+ 	@subjects_count=Subject.count
+
   	@subject =Subject.new(subject_params)
 
   	if @subject.save

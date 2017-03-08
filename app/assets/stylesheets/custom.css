@@ -21,3 +21,10 @@ background-color: green;
     padding-left: 25px;
     padding-top: 10PX;
 }
+
+.field_with_errors{
+	border: 1px solid red;
+	max-width: 176px;
+	margin-left: 20px;
+
+}

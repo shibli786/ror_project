@@ -1,11 +1,11 @@
-
+<%=error_messages_for(@subject)%>
 	<table>
 		<tr>
 			<div class="form-group">
-			<th><label class="input-label">Name</label>
+			<th><label>Name</label>
 			</th>
 			<td>
-			<%=t.text_field(:name,:class=>'form-control form-input' ) %>
+			<%=t.text_field(:name) %>
 				
 			</td>
 			</div>
